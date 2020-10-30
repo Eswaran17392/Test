@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GettingStarted"
+             x:Class="GettingStarted.MainPage">
+    <ContentPage.ToolbarItems>
+    <ToolbarItem Text="toolbar"
+                 IconImageSource="infoicon.png"
+                 Order="Primary"
+                 Priority="1" />
+</ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView
+                x:Name="MainScroll" BackgroundColor="Red"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Grid
+                    x:Name="SearchGrid"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <SearchBar
+                        x:Name="SearchBar"
+                        Grid.Row="0"
+                        Margin="20"
+                        BackgroundColor="Transparent"
+                        CancelButtonColor="Black"
+                        Focused="SearchBar_Focused"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Click to search"
+                        PlaceholderColor="DarkSlateBlue"
+                        SearchButtonPressed="SearchBar_SearchButtonPressed"
+                        TextChanged="SearchBar_TextChanged"
+                        TextColor="Blue"
+                        VerticalOptions="FillAndExpand" />
+                    <Label
+                        x:Name="SearchLabelNoItem"
+                        Grid.Row="1"
+                        FontSize="Medium"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="SearchLabelNoItem"
+                        VerticalOptions="CenterAndExpand" />
+                </Grid>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
