@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SavingImage_CustomSize"
+              xmlns:imageeditor="clr-namespace:Syncfusion.SfImageEditor.XForms;assembly=Syncfusion.SfImageEditor.XForms"           
+             x:Class="SavingImage_CustomSize.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ImageModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="button" Clicked="Button_Clicked"  Text="Save Image" Grid.Row="0"/>
+            <imageeditor:SfImageEditor x:Name="ImageEditor" Source="{Binding Image}" ImageSaving="ImageEditor_ImageSaving" Grid.Row="1"></imageeditor:SfImageEditor>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
